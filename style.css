@@ -1,0 +1,151 @@
+/* Ист Партс — «восточный каталог»: тёплый фон, тёмно-синий + киноварь, солнце, Oswald + Manrope */
+:root{
+  --bg:#f5f2ec; --paper:#fffdf9; --ink:#14213d; --ink2:#3d4a63; --mute:#7a8296;
+  --red:#d7261e; --red2:#b81d16; --line:#e3ddd2; --r:4px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 "Manrope",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+h1,h2,h3{font-family:"Oswald",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.01em;line-height:1.1}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* кнопки */
+.btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font:600 15px "Manrope",sans-serif;
+  padding:14px 26px;border-radius:var(--r);transition:background .15s}
+.btn:hover{background:var(--red2)}
+.btn.sm{padding:9px 18px;font-size:14px}
+.btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.55)}
+.btn.ghost:hover{background:rgba(255,255,255,.08)}
+
+/* шапка */
+.top{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}
+.top-in{display:flex;align-items:center;gap:28px;height:68px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-mark{width:40px;height:40px;flex:none}
+.logo-txt b{display:block;font:600 22px/1 "Oswald",sans-serif;text-transform:uppercase;letter-spacing:.02em}
+.logo-txt small{display:block;font-size:12px;color:var(--mute);margin-top:3px}
+.menu{display:flex;gap:24px;margin-left:auto}
+.menu a{text-decoration:none;font-weight:600;font-size:15px;color:var(--ink2)}
+.menu a:hover{color:var(--red)}
+.top-tel{font-weight:700;text-decoration:none;white-space:nowrap}
+
+/* первый экран */
+.hero{background:var(--ink);color:#fff;overflow:hidden}
+.hero-in{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;padding:72px 24px 120px}
+.kicker{display:inline-block;font:600 13px "Manrope";letter-spacing:.14em;text-transform:uppercase;color:#ffb3ad;
+  border-left:3px solid var(--red);padding-left:10px;margin-bottom:22px}
+.hero h1{font-size:clamp(34px,4.2vw,54px);text-wrap:balance}
+.lead{font-size:18px;color:#c9cfdc;margin-top:22px;max-width:560px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.hero-pic{position:relative;aspect-ratio:4/3}
+.hero-pic .sun{position:absolute;width:72%;aspect-ratio:1;border-radius:50%;background:var(--red);right:-8%;top:-14%}
+.hero-pic .ph{position:absolute;inset:8% 4% 0 0;background:center/cover;border-radius:var(--r);
+  box-shadow:0 0 0 8px var(--ink)}
+
+/* три направления — заходят на синий блок */
+.dirs-in{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:-72px;position:relative}
+.dir{background:var(--paper);border-radius:var(--r);overflow:hidden;border-top:4px solid var(--red)}
+.dir .ph{aspect-ratio:16/9;background:center/cover}
+.dir-b{padding:20px 22px 24px}
+.dir h2{font-size:26px}
+.dir p{color:var(--ink2);margin-top:8px;font-size:15px}
+
+/* секции */
+.sec{padding:88px 0}
+.sec.alt{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sec.dark{background:var(--ink);color:#fff}
+.head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:36px;flex-wrap:wrap}
+.head h2{font-size:clamp(30px,3.4vw,42px);position:relative;padding-left:22px}
+.head h2::before{content:"";position:absolute;left:0;top:.18em;width:10px;height:10px;border-radius:50%;background:var(--red)}
+.head p{color:var(--mute);max-width:520px}
+.dark .head p{color:#aab3c5}
+
+/* контрактные / новые */
+.kinds{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.kind{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:34px 34px 30px}
+.kind h2{font-size:30px}
+.tag{display:inline-block;margin-top:10px;font:700 12px "Manrope";letter-spacing:.1em;text-transform:uppercase;
+  color:var(--red);background:#fbe7e5;padding:4px 10px;border-radius:var(--r)}
+.kind ul{list-style:none;margin-top:20px}
+.kind li{padding:10px 0 10px 26px;border-top:1px dashed var(--line);position:relative}
+.kind li::before{content:"";position:absolute;left:2px;top:19px;width:12px;height:2px;background:var(--red)}
+
+/* каталог */
+.tiles{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.tiles li{background:var(--paper);padding:26px 22px 24px;transition:background .15s}
+.tiles li:hover{background:#fff6f4}
+.ico{width:44px;height:44px;color:var(--ink)}
+.tiles li:hover .ico{color:var(--red)}
+.tiles h3{font-size:19px;margin-top:16px}
+.tiles p{font-size:14px;color:var(--mute);margin-top:6px;line-height:1.5}
+
+/* марки */
+.brands{border-top:2px solid var(--ink)}
+.brow{display:grid;grid-template-columns:180px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);align-items:center}
+.bl{font:600 18px "Oswald";text-transform:uppercase;color:var(--red)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:7px 14px;font-weight:600;font-size:15px}
+
+/* шаги */
+.steps{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.steps li{border-top:1px solid rgba(255,255,255,.2);padding-top:22px}
+.steps .n{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--red);
+  font:600 20px "Oswald";margin-bottom:18px}
+.steps h3{font-size:22px}
+.steps p{color:#c2c9d6;margin-top:8px;font-size:15px}
+
+/* кому */
+.clients{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.clients li{border-left:3px solid var(--red);padding:4px 0 4px 18px}
+.clients h3{font-size:20px}
+.clients p{color:var(--ink2);margin-top:8px;font-size:15px}
+
+/* вопросы */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+.faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.faq summary{cursor:pointer;font-weight:700;font-size:17px;list-style:none;position:relative;padding-right:32px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:-4px;font:500 26px "Oswald";color:var(--red)}
+.faq details[open] summary::after{content:"–"}
+.faq p{color:var(--ink2);margin-top:10px}
+
+/* контакты */
+.cont{display:grid;grid-template-columns:1fr 1.2fr;gap:24px}
+.cont-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:12px 30px}
+.cont-card div{padding:16px 0;border-bottom:1px dashed var(--line)}
+.cont-card div:last-child{border:0}
+.cont-card span:not(.stub){display:block;font:700 12px "Manrope";letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-bottom:4px}
+.cont-card .tel{font:600 28px "Oswald";text-decoration:none}
+.stub{display:inline-block;border:1.5px dashed #c9bfae;color:var(--mute);padding:4px 12px;border-radius:var(--r);font-size:14px}
+.map{width:100%;height:100%;min-height:340px;border:0;border-radius:var(--r);filter:saturate(.7)}
+
+.foot{background:var(--ink);color:#aab3c5;font-size:14px}
+.foot-in{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:26px 24px}
+.foot b{color:#fff}
+.credits ul{margin:18px 0 0 18px}
+.credits li{margin:6px 0}
+
+/* адаптив */
+@media (max-width:1080px){
+  .tiles{grid-template-columns:repeat(3,1fr)}
+  .clients,.steps{grid-template-columns:repeat(2,1fr)}
+  .menu{display:none}
+  .top-in{gap:16px}.top .btn{margin-left:auto}
+}
+@media (max-width:760px){
+  .wrap.hero-in{grid-template-columns:1fr;padding:44px 18px 104px;gap:36px}
+  .hero-pic{display:none}
+  .dirs-in,.kinds,.faq,.cont{grid-template-columns:1fr}
+  .dirs-in{margin-top:-60px}
+  .tiles{grid-template-columns:repeat(2,1fr)}
+  .tiles li{padding:20px 16px}
+  .brow{grid-template-columns:1fr;gap:10px}
+  .clients,.steps{grid-template-columns:1fr}
+  .sec{padding:64px 0}
+  .kind{padding:26px 22px}
+  .top-tel{display:none}
+  .logo-txt small{display:none}
+  .wrap{padding:0 18px}
+}
